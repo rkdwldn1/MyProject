@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Live Lip Mask</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        img {
+            width: 80%;
+            /* 영상 크기 조정 */
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .button-container button {
+            font-size: 18px;
+            /* 버튼 텍스트 크기 조정 */
+            padding: 10px 20px;
+            /* 버튼 패딩 조정 */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Live Lip Mask</h1>
+    <img src="{{ url_for('video_feed') }}">
+
+    <div class="button-container">
+        <button onclick="changeMask('lip1.png')">Lip 1</button>
+        <button onclick="changeMask('lip2.png')">Lip 2</button>
+    </div>
+
+    <script>
+        function changeMask(maskName) {
+            fetch(`/change_mask?mask=${maskName}`);
+        }
+    </script>
+</body>
+
+</html>
