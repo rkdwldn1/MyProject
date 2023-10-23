@@ -12,7 +12,7 @@ while True:
     ret, frame = cap.read()
 
     if not ret:
-        print("프레임을 읽을 수 없습니다. 종료합니다.")
+        print("Hi")
         break
 
     # 프레임을 화면에 표시
